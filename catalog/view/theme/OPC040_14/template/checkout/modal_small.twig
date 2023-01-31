@@ -1,0 +1,18 @@
+<div id="checkoutCartResponseModal" class="modal fade checkout-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Товар добавлен в корзину</h4>
+            </div>
+            <div class="modal-body">
+                <h3>{{ product_title }}</h3>
+                <img src="{{ product_image }}" alt="{{ product_title }}" title="{{ product_title }}">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Продолжить покупки</button>
+                <a href="{{ checkout_link }}" class="btn btn-primary">Оформить заказ</a>
+            </div>
+        </div>
+    </div>
+</div>

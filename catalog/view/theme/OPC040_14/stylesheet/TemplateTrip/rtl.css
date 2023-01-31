@@ -1,0 +1,965 @@
+* { direction: rtl; }
+/*
+#cart.btn-block .btn, #column-right, .pull-right { float:left; }
+header #logo, #column-left, .pull-left { float:right; }
+*/
+/*-------------------- Category Filter CSS Start -------------------*/
+	.category-filter .filter-grid-list button {
+		float: right;
+	}
+/*-------------------- Category Filter CSS End -------------------*/
+.pull-right { float:left !important; }
+.pull-left { float:right !important; }
+.dropdown-menu {
+	float: right;
+	text-align: right;
+	left: auto;
+	right: 0;
+}
+#content { float: right; }
+#top-links > ul > li {
+	float: right;
+}
+.header-top-right .list-inline > li:first-child {
+	padding-left:0 !important;
+	padding-right:9px !important;
+}
+#top-links > ul > li:last-child {
+    padding: 0 10px 0 0;
+}
+#top-links > li:first-child { padding-left: 5px; padding-right: 0px; }
+#top-links > li:last-child { padding-left: 0px; padding-right: 5px; }
+#form-currency .btn-group ul.dropdown-menu.currency-toggle, 
+#form-language .btn-group ul.dropdown-menu.language-toggle, 
+#top-links .dropdown .dropdown-menu{
+	right:auto;
+	left:0;
+}
+#top-links .dropdown .dropdown-menu a {
+	text-align:right;
+}
+#top #form-currency .currency-select, #top #form-language ul.dropdown-menu li button { text-align: right; }
+.header-top-right, header .header-right,
+#cart { 
+	float:left;
+}
+#cart .dropdown-menu {
+	left: 0;
+	right: auto;
+}
+.header-right #cart > button.btn::after {
+	left: 0;
+	right: auto;
+}
+.header-right #cart .cart-heading {
+	float: right;
+}
+#cart #cart-total {
+	left: 0;
+	right: auto;
+}
+#cart .header-cart-toggle .text-right.price-total {
+	text-align: left;
+}
+#cart .dropdown-menu li p a {
+	float: right;
+}
+#cart .table-bordered > thead > tr > th, 
+#cart .table-bordered > tbody > tr > th, 
+#cart .table-bordered > tfoot > tr > th, 
+#cart .table-bordered > thead > tr > td, 
+#cart .table-bordered > tbody > tr > td, 
+#cart .table-bordered > tfoot > tr > td {
+	text-align: right;
+}
+.header-top-left,
+header .header-left,
+#menu ul.navbar-nav,
+.navbar-nav > li { 
+	float:right; 
+}
+.header-top-left .phone-number {
+	padding:10px 10px 8px 0;
+}
+.header-top-left .fa.fa-phone::before {
+	left:0;
+	 transform: rotate(-135deg);
+}
+header .header-middle #logo {
+	float:none;
+	display:table;
+}
+.header-top-left .pull-left { float: right !important; }
+/*-------------------------------- search CSS Start --------------------------------*/
+	header .header-middle {
+		float: left;
+	}
+	#header-search .select-wrapper::after {
+		left: 15px;
+		right: auto;
+	}
+	#header-search.input-group {
+		float: right;
+	}
+	#header-search > .form-control.input-lg {
+		text-align: left;
+	}
+	@media (max-width: 991px) {
+		#header-search.input-group {
+			float: none;
+		}
+	
+	}
+/*-------------------------------- search CSS End --------------------------------*/
+#top-links .dropdown-menu-right { left: 0; right: auto; }
+
+/*------------------------------- Megamenu CSS Start ---------------------------------------------*/
+	.menu-category ul.dropmenu li.TT-Sub-List > .dropdown-menu {
+		right: 100%;
+		left: auto;
+	}
+	.mega-dropdown-menu .dropdown {
+		float: right;
+	}
+	.mega-dropdown-menu li.dropdown > a::before {
+		left: auto;
+		right: 0;
+	}
+	.main-category-list .menu-category li.TT-Sub-List .dropdown-inner ul.single-dropdown-menu li.dropdown > a.single-dropdown::after {
+		left: 15px;
+		right: auto;
+		content: "\f104";
+	}
+	.main-category-list .menu-category li.TT-Sub-List .dropdown-inner ul.single-dropdown-menu li.dropdown > .dropdown-menu {
+		right: 100%;
+		left: auto;
+	}
+	#column-left .main-category-list.left-main-menu .TT-panel-heading::after,
+	#column-right .main-category-list.left-main-menu .TT-panel-heading::after {
+		float: left;
+	}
+	.main-category-list.left-main-menu .box-content ul li a.TT-Category-List::after {
+		content: "\f104";
+		left: 10px;
+		right: auto;
+	}
+	.main-category-list.left-main-menu .box-content ul li a.TT-Category-List {
+		background: none;
+	}
+	.main-category-list.left-main-menu .menu-category ul ul ul {
+		float: right;
+	}
+	.main-category-list.left-main-menu .dropmenu li li li {
+		float: right;
+	}
+	.main-category-list.left-main-menu .dropmenu li li.dropdown-inner > a,
+	.main-category-list .menu-category ul.dropmenu .dropdown-menu ul .dropdown-inner ul a,
+	.main-category-list.left-main-menu .dropmenu .dropdown-inner {
+		float: right;
+	}
+	.main-category-list.left-main-menu .dropmenu li li.dropdown-inner > a::before {
+		left: auto;
+		right: 0;
+	}	
+	.main-category-list.left-main-menu .dropmenu > li:hover .active_menu {
+		left: -8px;
+		right: auto;
+		float: left;
+	}
+	.main-category-list.left-main-menu .menu-category ul li a.TT-Category-List::after,
+	.main-category-list.left-main-menu .menu-category ul li:hover a.TT-Category-List::after {
+		left: 0;
+		right: auto;
+		content: "\f104";
+	}
+@media (max-width: 991px) {
+	.main-category-list .menu-category li.TT-Sub-List .dropdown-inner .mega-dropdown-menu {
+		padding: 0 15px 0 0;
+	}
+	.main-category-list .menu-category ul.dropmenu li a, .main-category-list.left-main-menu .dropmenu li li.dropdown-inner > a, .main-category-list .menu-category ul.dropmenu .dropdown-menu ul .dropdown-inner ul a, .main-category-list .menu-category li.TT-Sub-List .dropdown-inner ul.single-dropdown-menu li.dropdown > a {
+		float: right;
+	}
+	#menu .dropdown-inner ul.mega-dropdown-menu.childs_1 > li > a::before {
+		border:none;
+	}
+	#menu .nav > li > a, #menu .nav > li > span {
+		padding:2px;
+	}
+	.left-main-menu .TT-panel-heading::after {
+		left: 15px;
+		right: auto;
+	}
+	.main-category-list.left-main-menu .menu-category ul li a.TT-Category-List::after, .main-category-list.left-main-menu .menu-category ul li:hover a.TT-Category-List::after {
+		display: none;
+	}
+	.left-main-menu .dropmenu li > i.fa-angle-down::before {
+		left: 0;
+		right: auto;
+	}
+	.left-main-menu .dropmenu li i.fa-angle-down {
+		float: left;
+	}
+	.main-category-list .menu-category ul.dropmenu li a, .main-category-list.left-main-menu .dropmenu li li.dropdown-inner > a, .main-category-list .menu-category ul.dropmenu .dropdown-menu ul .dropdown-inner ul a {
+		float: right;
+	}
+	.left-main-menu ul.dropmenu .TT-Sub-List .dropdown-menu > ul,
+	.left-main-menu .dropmenu .TT-Sub-List .dropdown-menu ul .dropdown-inner > ul {
+		padding: 0 15px 0 0;
+	}
+	.main-category-list.left-main-menu .dropmenu .dropdown-inner {
+		text-align: right;
+	}
+}
+@media (max-width: 767px) {
+	.left-main-menu {
+		padding: 0 0 0 55px;
+	}
+}
+/*------------------------------- Megamenu CSS End ---------------------------------------------*/
+
+/*------------------------------------------ common Menu CSS Start -------------------------------------*/
+
+	#menu .nav.navbar-nav {
+		float:right;
+	}
+	.menu-container .offer-zone .offer-zone-sale-icon {
+		right:-10px;
+		left:auto;
+	}
+	.menu-container .offer-zone .offer-zone-sale-icon::before {
+		left:8px;
+		right:auto;
+	}
+	#menu .nav > li > a, #menu .nav > li > span {
+		padding: 20px 20px 20px 35px;
+	}
+	#menu .nav > li.dropdown::after {
+		left:18px;
+		right:auto;
+	}
+	#menu .dropdown-inner a {
+		text-align:right;
+	}
+	#menu .navbar-collapse li.dropdown > i { left: 0px; right: auto; }
+	#menu ul.nav ul.mega-dropdown-menu li.dropdown > a::after {
+		content:"" !important;
+	
+	}
+	#menu .dropdown-inner ul.mega-dropdown-menu.childs_1 > li > a::after {
+		border:none;
+	}
+	#menu .dropdown-inner ul.mega-dropdown-menu.childs_1 > li > a::before {
+		border-bottom: 1px solid #cccccc;
+		bottom: -2px;
+		content: "";
+		left: auto;
+		position: absolute;
+		right: 11px;
+		top: 0;
+		width: 15%;
+		left:auto;
+	}
+	#menu .nav .dropdown-menu { left: auto; right: 0; }
+	#menu #category { float: right; }
+	#menu div.navbar-header::after, #menu .navbar-header i.fa { left: 15px; right: auto; }
+	
+	#menu .dropdown-inner ul:first-child { border: 0 none !important; }
+	#menu .dropdown-inner ul:last-child { border-right:none; }
+	
+	#menu ul.nav li ul.list-unstyled > li.dropdown .dropdown-menu { left: auto; right: 190px; }
+	#menu ul.nav > li.dropdown:hover > .dropdown-menu {  }
+	#menu ul.nav ul.list-unstyled li.dropdown > a:after {
+		content: '\f104';
+		position: absolute;
+		left: 15px;
+		right: auto;
+	}
+
+
+/*------------------------------------------ common Menu CSS End -------------------------------------*/
+
+/* ---------------------------------------- common Subtitle css Strat ------------------------------------------------ */
+		.TTProduct-Tab .box-heading .tthometab-title {
+			float: right;
+		}
+		.TTProduct-Tab .nav-tabs > li > a {
+			padding: 10px 0 10px 40px;
+		}
+		.TTProduct-Tab .tab-box-heading .nav.nav-tabs li {
+			float: right;
+		}
+/* --------------------------------------------- common Subtitle css End -------------------------------------------------- */
+.brand-carousel .swiper-pager {
+	left: 0;
+	right: auto;
+}
+.owl-controls .owl-buttons {
+	left:10px;
+	right:auto;
+}
+#column-left .box-heading > h3 {
+	text-align:right;
+}
+#column-left .panel-heading, 
+#column-right .panel-heading, 
+#column-left .box-heading, 
+#column-right .box-heading,
+#column-left .box-heading > h3, 
+#column-right .box-heading > h3, 
+#column-left .panel-heading, 
+#column-right .panel-heading, 
+#ttcmstestimonial .title_block, 
+#ttcmsleftservices .title_block {
+	text-align: right;
+}
+#column-left .product-thumb .price {
+    text-align: right;
+}
+#column-left .products-list .row > div .image, #column-right .products-list .row > div .image {
+	float:right;
+}
+.footer-top .footer-top-block > div.payment-icon-block, .footer-top-block .news-letter-inner > .purchage-theme {
+	float:left;
+}
+footer > div > .row div.footer-column, #ttcmsfooter .ttfooter-logo {
+	float:right;
+}
+.product-sale-icon, .product-thumb .sale-icon {
+	left: 10px;
+	right: auto;
+}
+.product-sale-icon {
+	left: 25px;
+}
+.product-thumb .button-group {
+	right: 15px;
+	left: auto;
+}
+.product-list .thumb-description .button-wrapper {
+    border-right: 1px solid #f0f0f0;
+    float: right;
+    padding: 20px 20px 0 0;
+	border-left:none;
+}
+.product-list .product-thumb .button-group button + button {
+	float:right;
+}
+.product-product .form-group.required span.input-group-btn button {
+    border-radius: 5px 0 0 5px;
+	margin: 0 -1px 0 0;
+}
+.product-options .product-quantity {
+	float: right;
+}
+#content .special-items .product-thumb .rating {
+	text-align:right;
+}
+#column-left .option-filter .text-right {
+	text-align:left;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-next::after {
+	padding:0 0 0 8px;
+	vertical-align:baseline;
+}
+.owl-carousel .owl-controls .owl-buttons .owl-prev::before {
+	vertical-align:baseline;
+}
+.ttcategory-name {
+	padding:0 50px 0 45px ;
+}
+.select-wrapper::after, .product-product .form-group .select-wrapper::after {
+	left:10px;
+	right:auto;
+}
+footer .footer-column {
+	float: right;
+}
+footer .footer-column.footer-left {
+	padding: 20px 20px 0 0;
+}
+footer .contact-us .contact-address {
+	 padding: 0 20px 0 0;
+}
+footer .contact-us ul li i {
+	float:right;
+	margin:0 0 0 10px;
+}
+body > #page .page-title-wrapper h1 {
+	float:right;
+}
+.rating .product-rating {
+  border-right: medium none;
+	padding-left: 10px;
+	padding-right: 0;
+}
+.product-details .rating > a {
+	border-left: 1px solid #d5d5d5;
+	margin: 0;
+	float: right;
+	padding: 0 0 0 10px;
+}
+.product-details .rating > a:last-child {
+  border-left: medium none;
+}
+.product-total-review .fa.fa-comment, 
+.product-write-review .fa.fa-pencil {
+	margin:0 10px;
+}
+.product-product .rating .product-total-review:hover::before {
+	color:#777;
+}
+.product-product .product-details .price-new {
+  float: right;
+  margin-left: 8px;
+}
+.table-bordered .text-left .input-group .form-control {
+	float:right;
+}
+.cart-form .input-group-btn {
+    float: right;
+}
+.product-product #button-cart {
+	padding: 7px 48px 4px 22px;
+	float: right;
+	margin: 0;
+}
+.product-product .btn-group {
+  float: right;
+  width: 100%;
+}
+.product-product #button-cart::before {
+	left: auto;
+	right: 0;
+}
+.customNavigation { float: left; }
+.product-list .caption .sale-icon { left: auto; right: 0; }
+
+.products-list .thumb-items { float: right; }
+.products-list .thumb-items:last-child { padding: 10px 10px 10px 0px; }
+.products-list .thumb-items:first-child { padding: 10px 0px 10px 10px; }
+
+/* Footer RTL Stylesheet */
+footer .footer-column h5.toggle::after { float: left; }
+
+/* Solve some Bootstrap RTL Issues */
+.form-horizontal .control-label { text-align: left; float: right; }
+
+.radio-inline, .checkbox-inline { padding-left: 0px; padding-right: 20px; }
+.radio-inline + .radio-inline, .checkbox-inline + .checkbox-inline { margin-left: 0px; margin-right: 10px; }
+
+/* Category page RTL */
+#column-right { clear: left; float: left; }
+#column-left { clear: right; float: right; }
+.category-description .category-image, .category-description .category-content { float: right; }
+
+.breadcrumb { float: left; }
+.breadcrumb > li { float: right; }
+.breadcrumb > li + li:before { content:'\f104'; float: right; }
+
+.category-filter .filter-grid-list, .category-filter .filter-show .text-right, .category-filter .filter-sort-by .text-right { float: right; }
+.category-filter .filter-text { padding: 7px 0 0 5px;}
+.category-filter .filter-show .filter-text {
+  margin: 0;
+}
+.category-filter .filter-sort-by, .category-filter .filter-show { float: left; }
+
+
+.category-treeview li.category-li .list-tree::before { left: 5px; right: auto; }
+
+/* category Product Grid List */
+.category-list ul li { margin: 5px 0 5px 5px; }
+.product-list .product-thumb .image,
+.product-list .product-thumb .button-group,
+.product-list .product-thumb .button-group button { float: right; }
+/*.product-layout, .product-list .product-thumb .image, .product-thumb .button-group button { float: right; }*/
+.product-list .product-thumb .caption { margin: 0 230px 0 0; }
+.product-list .product-thumb .caption {
+	margin:0;
+	float:right;
+}
+
+.product-list .product-thumb, .option-filter .text-right { text-align: right; }
+.product-thumb .price-new { margin: 0 0 0 5px; }
+/* Column Left Right Style*/
+#column-left .option-filter a.list-group-item:after, #column-right .option-filter a.list-group-item:after { left: 10px; right: auto; }
+#column-left .product-thumb .image, #column-right .product-thumb .image { float: right; }
+#column-left .product-thumb .button-group,
+#column-right .product-thumb .button-group { text-align: right; float: right; }
+#column-left .product-thumb .button-group button.btn-cart, #column-right .product-thumb .button-group button.btn-cart { text-align: right; }
+#column-left .product-thumb .caption .sale-icon, #column-right .product-thumb .caption .sale-icon { left: auto; right: 0; }
+.category-products .product-layout.product-grid {
+  float: right;
+}
+.pagination > li {
+	float:right;
+}
+.pagination li:last-child > a::after, .pagination li:first-child > a::after {
+	content:"\f177";
+}
+.pagination li:first-child > a::after, .pagination li:first-child > a::after {
+	content:"\f178";
+
+}
+
+/* Product page RTL 
+.product-image, .product-tabs .nav-tabs > li { float: right; }
+*/
+.product-details .btn.btn-default.product-btn-wishlist, 
+.product-details .btn.btn-default.product-btn-compare {
+  padding: 0 0 0 15px;
+}
+.product-product .product-details .btn-group button {
+  float: right;
+  margin-right: 0;
+}
+.product-product .product-details .addthis_toolbox > a:last-child { margin: 0px; }
+.product-details .addthis_toolbox {
+  float: right;
+  width: auto;
+}
+.tab-content ul, .tab-content ol { padding-left: 0px; padding: 0 15px 0 0; }
+
+.text-left { text-align: right; }
+.text-right { text-align: left; }
+
+.category-pagination .text-left, .rating .product-rating, .addthis_toolbox, .nav-tabs > li { float: right; }
+.product-quantity label, .product-quantity #input-quantity { margin: 0 0 0 5px; float: right; }
+.category-pagination .text-right { float: left; }
+
+/*.radio, .checkbox { padding: 0 20px 0 0; }*/
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] { float: right; margin: 3px 0 0 5px; }
+
+/* Extra pages RTL stylesheet */
+.dropdown-menu.pull-right { left: 0; right: auto; }
+
+#column-left .account-list .list-group a.list-group-item:before, #column-right .account-list .list-group a.list-group-item:before,
+#column-left .affiliate-list .list-group a.list-group-item:before, #column-right .affiliate-list .list-group a.list-group-item:before,
+#column-left .information-list .list-group a.list-group-item:before, #column-right .information-list .list-group a.list-group-item:before { padding: 0 0 0 5px; float: right; }
+.store-list .store-tags > a { margin: 5px 0px 5px 10px; }
+.store-list .store-tags > a.active-store > i { left: auto; right: -4px; }
+
+footer .footer-column ul a:before { padding: 0 0 0 5px; float: right; }
+
+#goToTop { 
+	left: 20px;
+	right: auto; 
+}
+
+.modal-dialog .modal-header .close { float: left; }
+
+.information-contact .contact-location .location-title i.fa { margin: 0 0 0 5px; }
+.information-contact .contact-location div.row > div { float: right; }
+
+.alert button.close { float: left; }
+
+/* checkout/cart Page */
+.checkout-cart .sub-total-table { float: left; }
+#accordion .panel-heading h4.panel-title a i.fa-caret-down { float: left; }
+#accordion label.control-label { float: right; }
+
+.category-treeview a.list-group-item:before { padding: 0 0 0 5px; float: right; }
+.category-treeview a.list-group-item.child-item:before, .category-list a.current-child-item:before { content: '\f104'; float: right; }
+.list-group a.child-item, .list-group a.current-child-item { padding-left: 0px; padding-right: 30px; }
+
+.information-sitemap .col-sm-6 > ul { padding-left: 0px; padding-right: 15px; }
+.information-sitemap #content ul ul { padding-left: 0px; padding-right: 30px; }
+@media (min-width: 768px) {
+#content .product-images, #content .product-details, .tab-content { float: right; }
+}
+@media (max-width: 1199px) {
+	.ttcategory-name {
+		padding:0 19px 0 15px;
+	}
+	#column-left .product-thumb .caption,
+	#column-right .product-thumb .caption,
+	#column-left .product-thumb .button-group,
+	#column-right .product-thumb .button-group {
+		margin:0;
+	}
+}
+@media (max-width: 991px) {
+	#top-links > ul {
+		float: none;
+	}
+	#top-links li .dropdown {
+		float: left;
+	}
+	.header-top-right #wishlist-total {
+		float: left;
+	}
+	
+	.product-list .product-thumb .caption, .product-list .thumb-description .button-wrapper {
+		border: none;
+	}
+	
+	#column-left .toggle:after,
+	#column-right .toggle:after,
+	#ttcmsleftservices .title_block:after {
+		left: 15px;
+		right: auto;
+	}
+	footer .footer-column h5.toggle::after,
+	 #ttcmsfooterservice .title_block::after,
+	 .payment-icon-inner > h4::after {
+		left: 10px;
+		right: auto;
+	}
+	.ttcategory-name {
+		padding:0 19px 0 15px;
+	}
+	.category-pagination .text-left {
+		width:60%;
+	}
+	.category-pagination .text-right {
+		width:40%;
+	}
+	#column-left .product-thumb .thumb-description,
+	#column-right .product-thumb .thumb-description {
+    	float: right;
+ 	   padding: 0 7px 0 0;
+	}
+	.product-list .product-thumb .button-group button.btn-cart {
+ 	   margin: 0 0 0 5px !important;
+	}
+	footer .footer-column,
+	footer .footer-column.footer-left {
+		padding: 0;
+	}
+	/*-------------------------------- CateGory Filter CSS Start --------------------------------------*/
+
+		.option-filter-box a.list-group-item::after {
+			 left: 10px;
+			 right: auto;
+		}
+
+	/*-------------------------------- CateGory Filter CSS End --------------------------------------*/
+	
+}
+@media (max-width: 767px) {
+#content { float: none; }
+.category-filter .filter-sort-by, .category-filter .filter-show { clear: right; float: right; }
+.form-horizontal .control-label, .form-group > div { float: none; }
+	#form-currency ul.dropdown-menu, #form-language ul.dropdown-menu, #top-links .dropdown .dropdown-menu {
+		left: 0;
+		right: 0;
+	}
+	#form-currency .btn-group ul.dropdown-menu.currency-toggle, 
+	#form-language .btn-group ul.dropdown-menu.language-toggle, 
+	#top-links .dropdown .dropdown-menu {
+	  left: 0;
+	  right: 0;
+	}
+	.header-top-right {
+		width: 100%;
+		padding: 0;
+		float: left;
+		text-align: center;
+	}
+	.header-top-right .pull-right {
+		float: none !important;
+	}
+	#cart #cart-total {
+		right: 8px;
+		left: auto;
+	}
+	#cart {
+		left: 30px;
+		right: auto;	
+		border-radius: 4px 0 0 4px; 
+		-moz-border-radius: 4px 0 0 4px;
+		-webkit-border-radius: 4px 0 0 4px;
+		-khtml-border-radius: 4px 0 0 4px;
+	}
+
+	.category-pagination div.text-left {
+		width:60%;
+	}
+	.category-pagination .text-right {
+		width:40%;
+		float:right;
+	}
+	.footer-top-block .news-letter-inner {
+		margin:0 auto;
+	}
+	.product-category .category-description .category-image .img-thumbnail {
+		width:100%;
+	}
+	.category-pagination div.text-left {
+		float:right;
+	}
+	#form-currency .btn.dropdown-toggle, .header-top-left #form-language .btn.dropdown-toggle {
+		margin-left:6px;
+	}
+	#header-search .select-wrapper::after {
+		right: auto !important;
+		left: 80px;
+	}
+	.header-top-right .list-inline > li:first-child {
+		padding-right:7px !important;
+	}
+	#ttcmsservices .ttcmsservice > div.col-sm-3 .ttcontent_inner .service {
+		float:left;
+		width:100%;
+		text-align:center;
+	}
+	#ttcmsservices .ttcmsservice > div.col-sm-3 .ttcontent_inner .service .service-content {
+    	margin: 0;
+ 	   text-align: center;
+	}
+	#ttcmsservices .ttcmsservice > div.col-sm-3 .ttcontent_inner .service .service-icon {
+ 	   float: none;
+	}
+	.breadcrumb {
+		float:none;
+	}
+}
+@media (max-width: 480px) {
+	#cart {
+		left: 15px;
+		right: auto;
+	}
+	.header-top-right .dropdown .dropdown-toggle > i.fa-user {
+	  text-align: right;
+	}
+	#top-links .dropdown .dropdown-toggle > span::after {
+		margin: 0 3px 0 0;
+	}
+	.header-top-right .dropdown span {
+		float:	left;
+	}
+	.product-list .product-thumb .image, .product-list .product-thumb .button-group, .product-list .product-thumb .button-group button {
+		float:none;
+	
+	}
+	.product-list .product-thumb .btn-cart span {
+		padding:0 10px;
+	}
+	.product-list .product-thumb .caption, .product-list .thumb-description .button-wrapper {
+		padding:0 15px 0 0;
+	}
+	header .header-right {
+		float:left;
+		width:100%;
+		text-align:center;
+	}
+	#cart, header #logo {
+		float:none;
+	}
+	header > .container {
+    	padding-left: 10px;
+ 	   padding-right: 10px;
+	}
+	.header-middle #header-search {
+		float: none;
+		margin: 0 auto;
+	}
+	#header-search .select-wrapper::after {
+		left: 42px;
+	}
+	#header-search .input-group-btn .header-search-btn {
+		margin-right:-2px;
+	}
+	.product-list .product-thumb .button-group button.btn-cart {
+		float:right;
+	}
+	.product-product .product-details .rating .product-rating::before {
+		display:none;
+	}
+	.TTProduct-Tab .nav-tabs > li > a {
+		padding: 10px;
+	}
+	.box-heading > h3 {
+		padding: 10px 0 10px 60px;
+	}
+	.product-product .nav.nav-tabs {
+		text-align: right;
+	}
+}
+
+/*--------------------------------------- Navigation Button CSS Start ------------------------------*/
+	.products-carousel.owl-carousel .owl-buttons {
+		left: 0;
+		right: auto;
+	}
+	.products-carousel.owl-carousel .owl-buttons .owl-prev::before,
+	.products-carousel.owl-carousel .owl-buttons .owl-next::before,
+	.brand-carousel .owl-carousel .owl-buttons .owl-prev::before,
+	.brand-carousel .owl-carousel .owl-buttons .owl-next::before {
+		float: right;	
+	}
+	.products-carousel.owl-carousel .owl-buttons .owl-prev, .brand-carousel .owl-carousel .owl-buttons .owl-prev {
+		float: left;
+	}
+
+/*--------------------------------------- Navigation Button CSS Start ------------------------------*/
+#ttcmsheader .ttheader-service::before {
+	float: left;
+}
+/*--------------------------------------------- Header Service CSS Start-------------------------------------------*/
+	#ttcmsheaderservices {
+		float: left;
+		margin: 15px 0 10px 15px;
+	}
+	#ttcmsheaderservices .ttcmsheaderservice .ttsupport .ttcontent_inner .service .ttsupport_img {
+		float: right;
+		margin: 0 0 0 5px;
+	}
+	#ttcmsheaderservices .ttcmsheaderservice {
+		float: left;
+	}
+	#ttcmsheaderservices .ttcmsheaderservice .ttcontent_inner .service .service-content {
+		border-right: none;
+		border-left: 1px solid #f0f0f0;
+	}
+	@media (max-width: 767px) {
+		   #ttcmsheaderservices .ttcmsheaderservice .ttsupport .ttcontent_inner .service .ttsupport_img { 
+		   		float: none;
+		   }
+		   #ttcmsheaderservices .ttcmsheaderservice .ttcontent_inner .service .service-content {
+		   	border: none;
+		   }
+	}
+	@media (max-width: 480px) { 
+		#ttcmsheaderservices {
+			margin: 0;
+		}
+	}
+
+/*--------------------------------------------- Header Service CSS End-------------------------------------------*/
+
+
+/*--------------------------------------------- Testimonial CSS Start-------------------------------------------*/
+	#ttcmstestimonial ul li .testimonial-image {
+		float: right;
+	}
+	#ttcmstestimonial ul li .testimonial-user-title {
+		text-align: right;
+		float: right;
+		padding: 0 20px 0 0;
+	}
+	#ttcmstestimonial ul li .testimonial-content {
+		text-align: right;
+		float: right;
+	}
+
+/*--------------------------------------------- Testimonial CSS End-------------------------------------------*/
+
+
+/*--------------------------------------------- Left Services CSS Start -------------------------------------------*/
+	#ttcmsleftservices .block_content > div,
+	#ttcmsleftservices .block_content > div .ttcontent_inner .service .service-icon {
+		float: right;
+	}	
+	#ttcmsleftservices .block_content > div .ttcontent_inner .service .service-content {
+		float: right;
+		padding: 5px 15px 0 0;
+	}
+	
+
+/*--------------------------------------------- Left Services CSS End-------------------------------------------*/
+
+/* ----------------------------- Start TT - CMS bottom sub-banner block ----------------------- */
+	#ttcmssubbanners {
+		float: right;
+	}
+	#ttcmssubbanners .ttsubbanner {
+		float: right;
+	}
+
+/* ----------------------------- End TT - CMS bottom sub-banner block ----------------------- */
+
+/*-------------------------------------Start TT-CMS Footer Services------------------------------*/
+	#ttcmsfooterservice {
+		float: right;
+	}	
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content::after {
+		left: 0;
+		right: auto;
+		border-right: none;
+		border-left: 1px solid #272727;
+	}
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-desc {
+		padding: 0 70px 0 0;
+	}
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-img.secure-payment-img {
+		float: right;
+	}
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content {
+		float: right;
+	}
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-img.app-block-img,
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-img,
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-desc .service-desc,
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-desc .service-desc li {
+		float: right;
+	}
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-desc .service-desc li > span {
+		float: right;
+		padding: 0 17px 0 0;
+	}
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-desc .service-desc li > span.android, #ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content .footer-service-desc .service-desc li > span.iOs {
+	
+		margin: 0 0 20px 20px;
+		padding: 0 30px 0 0;
+	}
+	@media (max-width: 991px) {
+	#ttcmsfooterservice .ttcmsfooterservice .ttfooterservice .service-block-content::after {
+		border-right: 1px solid #f0f0f0;
+		border-left: none;
+	}
+	}
+	
+/*-------------------------------------End TT-CMS Footer Services------------------------------*/
+
+/*------------------------------------ Footer About-Us CSS Start ----------------------------------*/
+	#ttcmsfooter .ttabout-desc {
+		text-align: right;
+	}
+	@media (max-width: 991px) {
+	  #ttcmsfooter .ttabout-desc {
+		padding: 10px;
+		width: 100%;
+	  }
+	  footer .footer-column.footer-left-cms {
+		  padding: 0;
+	  }
+	}
+/*------------------------------------ Footer About-Us CSS End ----------------------------------*/
+
+/*------------------------------------ Footer default link CSS Start ----------------------------------*/
+	.footer-bottom-link {
+		float:right;
+	}
+/*------------------------------------ Footer default link CSS End ----------------------------------*/
+
+
+/*------------------------------------- Footer Bottom Social Links Strat ------------------------------------*/
+   .follow-us {
+		float: left;
+	}	
+/*------------------------------------- Footer Bottom Social Links End ------------------------------------*/
+
+
+/* ---------------------------------- Footer Payment CMS start ------------------------------------- */
+	@media (max-width: 991px) { 
+		.payment-icon-block .paymentcms {
+			text-align: right;
+		}
+	}
+
+/* ---------------------------------- Footer Payment CMS End ------------------------------------- */
+
+
+
+
+/*------------------------ CheckBox,Radio Extra CSS Start -----------------------------------------*/
+	.checkbox-wrapper {
+		margin: 0 0 0 5px;
+	}
+	.radio-wrapper {
+		margin: 0 0 0 5px;
+	}
+
+
+/*------------------------ CheckBox,Radio Extra CSS End -----------------------------------------*/
+

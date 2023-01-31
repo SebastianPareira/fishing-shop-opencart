@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="{{ direction }}" lang="{{ lang }}">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>{{ title }}</title>
+<base href="{{ base }}" />
+{% if description %}
+<meta name="description" content="{{ description }}" />
+{% endif %}
+{% if keywords %}
+<meta name="keywords" content="{{ keywords }}" />
+{% endif %}
+
+<meta property="og:title" content="{{ og.title }}"/>
+<meta property="og:type" content="{{ og.type }}"/>
+<meta property="og:url" content="{{ og.url }}"/>
+<meta property="og:image" content="{{ og.image }}"/>
+<meta property="og:site_name" content="{{ og.site_name }}" />
+
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js?{{ timestamp }}" type="text/javascript"></script>
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js?{{ timestamp }}" type="text/javascript"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700' rel='stylesheet' type='text/css'>
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css?{{ timestamp }}" rel="stylesheet" type="text/css" />
+
+<link href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css?{{ timestamp }}" rel="stylesheet" media="screen" />
+<link href="catalog/view/theme/OPC040_14/stylesheet/TemplateTrip/bootstrap.min.css?{{ timestamp }}" rel="stylesheet" media="screen" />
+<link href="catalog/view/theme/OPC040_14/stylesheet/stylesheet.css?{{ timestamp }}" rel="stylesheet">
+<link href="catalog/view/theme/OPC040_14/stylesheet/TemplateTrip/ttblogstyle.css?{{ timestamp }}" rel="stylesheet" type="text/css" />
+
+{% if direction=='rtl' %}
+	<link href="catalog/view/theme/OPC040_14/stylesheet/TemplateTrip/rtl.css?{{ timestamp }}" rel="stylesheet" type="text/css" />
+	<link href="catalog/view/theme/OPC040_14/stylesheet/TemplateTrip/ttblogstyle-rtl.css?{{ timestamp }}" rel="stylesheet" type="text/css" />
+{% endif %}
+<link href="catalog/view/theme/OPC040_14/stylesheet/TemplateTrip/lightbox.css?{{ timestamp }}" rel="stylesheet" type="text/css" />
+
+{% for style in styles %}
+<link href="{{ style.href }}?{{ timestamp }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+
+<script src="catalog/view/javascript/common.js?{{ timestamp }}" type="text/javascript"></script>
+
+<!-- TemplateTrip custom Theme JS START -->
+<script src="catalog/view/javascript/TemplateTrip/addonScript.js?{{ timestamp }}" type="text/javascript"></script>
+<script src="catalog/view/javascript/TemplateTrip/lightbox-2.6.min.js?{{ timestamp }}" type="text/javascript"></script>
+<script src="catalog/view/javascript/TemplateTrip/waypoints.min.js?{{ timestamp }}" type="text/javascript"></script>
+<script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.min.js?{{ timestamp }}" type="text/javascript"></script>
+<!-- TemplateTrip custom Theme JS END -->
+
+{% for link in links %}
+<link href="{{ link.href }}" rel="{{ link.rel }}" />
+{% endfor %}
+
+{% for script in scripts %}
+<script src="{{ script }}?{{ timestamp }}" type="text/javascript"></script>
+{% endfor %}
+
+{% for analytic in analytics %}
+{{ analytic }}
+{% endfor %}
+</head>
+
+<body class="{{ class }}">
+<div id="page" class="container">
+<header>
+<nav id="top">
+{#	<div class="header-top-left">
+			<div class="header-left-cms">
+			</div>
+	</div>#}
+	<div class="header-top-right">
+    <div id="top-links" class="nav pull-right">
+      <ul class="list-inline">
+	    <li>{{ language }}</li>
+		{#<li>{{ currency }}</li>#}
+        <li>
+		  <div class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="ttuserheading">{{ text_account }}</span><i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu dropdown-menu-right account-link-toggle">
+            {% if logged %}
+            <li><a href="{{ account }}"><i class='fa fa-user'></i> {{ text_account }}</a></li>
+            <li><a href="{{ order }}"><i class='fa fa-calendar'></i> {{ text_order }}</a></li>
+            <li><a href="{{ transaction }}"><i class='fa fa-credit-card'></i> {{ text_transaction }}</a></li>
+            <li><a href="{{ download }}"><i class='fa fa-download'></i> {{ text_download }}</a></li>
+            <li><a href="{{ logout }}"><i class='fa fa-sign-out'></i> {{ text_logout }}</a></li>
+            {% else %}
+            <li><a href="{{ register }}"><i class='fa fa-user'></i> {{ text_register }}</a></li>
+            <li><a href="{{ login }}"><i class='fa fa-sign-in'></i> {{ text_login }}</a></li>
+            {% endif %}
+          </ul>
+		  </div>
+        </li>
+		
+		<li><a href="{{ wishlist }}" id="wishlist-total" title="{{ text_wishlist }}"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_wishlist }}</span></a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    {% if header_top %}
+        <div class="header-top">
+            {{ header_top }}
+        </div>
+    {% endif %}
+
+    <div class="full-header">
+  	<div class="header-left">
+        <div id="logo">
+			{% if logo %}
+				<a href="{{ home }}"><img src="{{ logo }}" title="{{ name }}" alt="{{ name }}" class="img-responsive" /></a>
+			{% else %}
+          		<h1><a href="{{ home }}">{{ name }}</a></h1>
+          {% endif %}
+      </div>
+    </div>
+  	
+	<div class="header-right">
+	  {{ cart }}
+	</div>
+
+    {%  if header_right %}
+        <div class="header-right-cms">
+            {{ header_right }}
+        </div>
+    {% endif %}
+
+    <div class="header-right-cms">
+        <div id="ttcmsheaderservices" class="col-xs-12 col-sm-6 col-lg-2">
+            <div class="ttcmsheaderservice col-xs-12 col-sm-12">
+                <div class="ttsupport">
+                    <div class="ttcontent_inner">
+                        <div class="service">
+                            <div class="ttsupport_img service-icon" id="feedback-action-click-on-icon"></div>
+                            <div class="service-content">
+                                <div class="service-desc"><a href="tel:0972499968">097-249-99-68</a></div>
+                                <div class="service-title" id="feedback-action-click-on-title">Перезвоните мне</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="feedbackModal" class="modal fade feedback-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Вам перезвонить?</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form" method="post" action="{{ feedback_action }}">
+                        <input type="hidden" name="url" value="{{ current_route }}">
+                        <div class="form-group required">
+                            <label class="col-sm-3 control-label" for="input-feedback-telephone">Телефон</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="telephone" value="" id="input-feedback-telephone" placeholder="Телефон" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group required">
+                            <label class="col-sm-3 control-label" for="input-feedback-firstname">Имя</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="firstname" value="" id="input-feedback-firstname" placeholder="Имя" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" class="btn btn-danger"><i class="fa fa-phone-square"></i> Заказать обратный звонок</button>
+                        </div>
+                    </form>
+                    <div id="feedback-form-errors" class="hidden">
+                        <div class="alert alert-danger alert-dismissible"><span></span></div>
+                    </div>
+
+                    <div class="feedback-modal-details">
+                        <ul>
+                            <li><i class="fa fa-clock-o"></i> Режим работы: 06.00-15.00 Выходной - пятница</li>
+                            <li><a href="tel:0634390888"><i class="fa fa-phone-square"></i>  0634390888</a></li>
+                            <li><a href="tel:0964962675"><i class="fa fa-phone-square"></i>  0964962675</a></li>
+                            <li><a href="mailto:zakaz@shopfishing.com.ua"><i class="fa fa-envelope"></i> zakaz@shopfishing.com.ua</a></li>
+                            <li>Украина, г. Одесса , 7 км, ул. Подгорная 990</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "telephone": "{{ json_ld.telephone }}",
+            "name": "{{ json_ld.name }}",
+            "url": "{{ json_ld.url }}",
+            "description": "Все для рыбалки, самые дешевые цены в Украине. Заходите и убедитесь сами! ☎ 0976906988 Доставка по Украине.",
+            "logo": "{{ logo }}",
+            "email": "{{ json_ld.email }}",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "{{ json_ld.address }}"
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#feedback-action-click-on-icon, #feedback-action-click-on-title").on('click', function () {
+                $('#feedback-form-errors span').html('');
+                $('#feedback-form-errors').addClass('hidden');
+                $("#feedbackModal").modal('show');
+            });
+
+            $('#feedbackModal button').on('click', function () {
+                $.ajax({
+                    url: '{{ feedback_action }}',
+                    type: 'POST',
+                    data: $("#feedbackModal form").serialize(),
+                    beforeSend: function() {
+                        $('#feedbackModal button').button('loading')
+                    },
+                    complete: function() {
+                        $('#feedbackModal button').button('reset')
+                    },
+                    success: function(response) {
+                        if (response.error_warning !== undefined && response.error_warning.length) {
+                            $('#feedback-form-errors span').html(response.error_warning);
+                            $('#feedback-form-errors').removeClass('hidden');
+                        } else {
+                            $('#feedbackModal .modal-body').html(response.success)
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                    }
+                });
+            })
+        });
+    </script>
+
+	<div class="col-sm-6 header-middle">
+	  	{{ search }}
+    </div>
+
+</div>
+
+    {% if header_bottom %}
+        <div class="header-bottom">
+            {{ header_bottom }}
+        </div>
+    {% endif %}
+</header>

@@ -1,0 +1,304 @@
+{{ header }}
+<div id="checkout-checkout" class="container">
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement":
+            [
+            {% for breadcrumb in breadcrumbs %}
+                {
+                    "@type": "ListItem",
+                    "position": {{ loop.index }},
+                    "item":
+                    {
+                        "@id": "{{ breadcrumb.href }}",
+                        "name": "{% if loop.first %}Главная{% else %}{{ breadcrumb.text }}{% endif %}"
+                    }
+                {% if loop.last %}
+                    }
+                {% else %}
+                    },
+                {% endif %}
+            {% endfor %}
+            ]
+        }
+    </script>
+  <ul class="breadcrumb">
+    {% for breadcrumb in breadcrumbs %}
+    <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+    {% endfor %}
+  </ul>
+    {% if error_warning %}
+        <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+        </div>
+    {% endif %}
+  <div class="row">{{ column_left }}
+    {% if column_left and column_right %}
+    {% set class = 'col-sm-6' %}
+    {% elseif column_left or column_right %}
+    {% set class = 'col-sm-9' %}
+    {% else %}
+    {% set class = 'col-sm-12' %}
+    {% endif %}
+    <div id="content" class="{{ class }}">{{ content_top }}
+      <h1>{{ heading_title }}</h1>
+        <form action="{{ action }}" method="post" id="checkout-form">
+            <div class="panel-group">
+            {% if not logged %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title panel-title-inline text-right">{{ text_checkout }}</h4>
+                    <span class="panel-title pull-right"><span id="show-login-modal" class="login-modal-button">Я зарегистрирован</span></span>
+                </div>
+                <div class="panel-body">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="account-register" name="account" value="register" {% if account == 'register' %}checked="checked"{% endif %}>
+                        <label class="form-check-label" for="account-register">
+                            {{ text_register }}
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="account-guest" name="account" value="guest" {% if account != 'register' %} checked="checked" {% endif %}>
+                        <label class="form-check-label" for="account-guest">
+                            {{ text_guest }}
+                        </label>
+                    </div>
+
+                    <div {% if account != 'register' %} class="hidden" {% endif %} id="registration-fields">
+                        <div class="mb-20"></div>
+                        <div class="form-group required{% if error_email %} has-error{% endif %}">
+                            <label class="control-label" for="input-payment-email">{{ entry_email }}</label>
+                            <input type="text" name="email" value="{{ email }}" placeholder="{{ entry_email }}" id="input-payment-email" class="form-control" />
+                            {% if error_email %}
+                                <div class="text-danger">{{ error_email }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group required{% if error_password %} has-error{% endif %}">
+                            <label class="control-label" for="input-payment-password">{{ entry_password }}</label>
+                            <input type="password" name="password" value="" placeholder="{{ entry_password }}" id="input-payment-password" class="form-control" />
+                            {% if error_password %}
+                                <div class="text-danger">{{ error_password }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group required{% if error_confirm %} has-error{% endif %}">
+                            <label class="control-label" for="input-payment-confirm">{{ entry_confirm }}</label>
+                            <input type="password" name="confirm" value="" placeholder="{{ entry_confirm }}" id="input-payment-confirm" class="form-control" />
+                            {% if error_confirm %}
+                                <div class="text-danger">{{ error_confirm }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Адрес Доставки</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group required{% if error_telephone %} has-error{% endif %}">
+                                <label class="control-label" for="input-payment-telephone">{{ entry_telephone }}</label>
+                                <input type="text" name="telephone" value="{{ telephone }}" placeholder="{{ entry_telephone }}" id="input-payment-telephone" class="form-control" />
+                                {% if error_telephone %}
+                                    <div class="text-danger">{{ error_telephone }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="form-group required{% if error_firstname %} has-error{% endif %}">
+                                <label class="control-label" for="input-payment-firstname">{{ entry_firstname }}</label>
+                                <input type="text" name="firstname" value="{{ firstname }}" placeholder="{{ entry_firstname }}" id="input-payment-firstname" class="form-control" />
+                                {% if error_firstname %}
+                                    <div class="text-danger">{{ error_firstname }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="form-group required{% if error_lastname %} has-error{% endif %}">
+                                <label class="control-label" for="input-payment-lastname">{{ entry_lastname }}</label>
+                                <input type="text" name="lastname" value="{{ lastname }}" placeholder="{{ entry_lastname }}" id="input-payment-lastname" class="form-control" />
+                                {% if error_lastname %}
+                                    <div class="text-danger">{{ error_lastname }}</div>
+                                {% endif %}
+                           </div>
+                            <div class="form-group required{% if error_city %} has-error{% endif %}">
+                                <label class="control-label" for="input-payment-city">{{ entry_city }}</label>
+                                <input type="text" name="city" value="{{ city }}" placeholder="{{ entry_city }}" id="input-payment-city" class="form-control" />
+                                {% if error_city %}
+                                    <div class="text-danger">{{ error_city }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="form-group required{% if error_address_1 %} has-error{% endif %}">
+                                <label class="control-label" for="input-payment-address-1">{{ entry_address_1 }}</label>
+                                <input type="text" name="address_1" value="{{ address_1 }}" placeholder="{{ entry_address_1 }}" id="input-payment-address-1" class="form-control" />
+                                {% if error_address_1 %}
+                                    <div class="text-danger">{{ error_address_1 }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="form-group required{% if error_payment_method %} has-error{% endif %}">
+                                {% if payment_methods %}
+                                    <p>{{ text_payment_method }}</p>
+                                    {% for payment_method in payment_methods %}
+                                        <div class="radio">
+                                            <label>{% if payment_method.code == code or not code %}
+                                                    {% set code = payment_method.code %}
+                                                    <input type="radio" name="payment_method" value="{{ payment_method.code }}" checked="checked" />
+                                                {% else %}
+                                                    <input type="radio" name="payment_method" value="{{ payment_method.code }}" />
+                                                {% endif %}
+                                                {{ payment_method.title }}
+                                                {% if payment_method.terms %}
+                                                    ({{ payment_method.terms }})
+                                                {% endif %} </label>
+                                        </div>
+                                    {% endfor %}
+                                    {% if error_payment_method %}
+                                        <div class="text-danger">{{ error_payment_method }}</div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            <p><strong>{{ text_comments }}</strong></p>
+                            <p>
+                                <textarea name="comment" rows="3" class="form-control">{{ comment }}</textarea>
+                            </p>
+                            <div class="buttons">
+                                <div class="pull-right">
+                                    <input type="button" value="Сформировать заказ" id="button-prepare-order" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default hidden" id="checkout-confirm-panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title panel-title-inline text-right">Подтверждение заказа</h4>
+                </div>
+                <div class="panel-body">
+                    <div id="checkout-confirm-div"></div>
+                </div>
+            </div>
+        </div>
+        </form>
+      {{ content_bottom }}</div>
+    {{ column_right }}</div>
+</div>
+
+<div id="loginModal" class="modal fade checkout-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Авторизация</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" method="post" action="{{ action_account_login }}">
+                    <div class="form-group required">
+                        <label class="col-sm-2 control-label" for="input-login-email">{{ entry_email }}</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="email" value="" id="input-login-email" placeholder="{{ entry_email }}" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group required">
+                        <label class="col-sm-2 control-label" for="input-login-password">{{ entry_password }}</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="password" value="" id="input-login-password" placeholder="{{ entry_password }}" class="form-control" />
+                        </div>
+                    </div>
+                </form>
+                <div id="login-form-errors" class="hidden">
+                    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> <span>{{ error_warning }}</span></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Войти</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    {% if not logged %}
+    $('input[type=radio][name=account]').change(function () {
+        if (this.value == 'register') {
+            $("#registration-fields").removeClass('hidden');
+        } else {
+            $("#registration-fields").addClass('hidden');
+        }
+    });
+
+    $('#show-login-modal').on('click', function () {
+        $('#login-form-errors span').html('');
+        $('#login-form-errors').addClass('hidden');
+        $('#loginModal').modal('show');
+    });
+
+    $('#loginModal button').on('click', function () {
+        $.ajax({
+            url: '{{ action_account_login }}',
+            type: 'POST',
+            data: $('#loginModal form').serialize(),
+            beforeSend: function() {
+                $('#loginModal button').button('loading')
+            },
+            complete: function() {
+                $('#loginModal button').button('reset')
+            },
+            success: function(response) {
+                if (response.error_warning.length) {
+                    $('#login-form-errors span').html(response.error_warning);
+                    $('#login-form-errors').removeClass('hidden');
+                } else {
+                    location.reload();
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    })
+
+    {% endif %}
+
+    $('#button-prepare-order').on('click', function () {
+        $.ajax({
+            url: '{{ action_checkout_validate }}',
+            type: 'POST',
+            data: $('#checkout-form').serialize(),
+            beforeSend: function() {
+                $('#button-prepare-order').button('loading');
+            },
+            success: function(response) {
+                if (!response.success) {
+                    $('#checkout-form').submit();
+                } else {
+                    $.ajax({
+                        url: '{{ action_checkout_confirm }}',
+                        dataType: 'html',
+                        complete: function() {
+                            $('#button-prepare-order').addClass('hidden');
+                        },
+                        success: function(html) {
+                            $('#checkout-confirm-div').empty();
+                            $('#checkout-confirm-div').html($(html));
+                            $('#checkout-confirm-panel').removeClass('hidden');
+                        },
+                        error: function(xhr, ajaxOptions, thrownError) {
+                            alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                        }
+                    });
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+            }
+        });
+    });
+</script>
+{{ footer }}
