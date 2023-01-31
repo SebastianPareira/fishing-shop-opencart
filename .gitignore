@@ -4,9 +4,11 @@
 /admin/config.php
 
 # Image File
-/image/*
+
 /image/catalog/demo/*
 /image/catalog/*
+/image/data/*
+/image/payment/*
 
 # Image Cache Files
 /image/cache/*
